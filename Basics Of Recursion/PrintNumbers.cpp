@@ -19,6 +19,10 @@ Sample Output 2 :
 
 ********************************************************** SOLUTION ****************************************************************/
 
+#include<iostream>
+
+using namespace std;
+
 void print(int n){
     if(n == 1){
         cout << n << " ";
@@ -27,3 +31,14 @@ void print(int n){
     print(n - 1);
     cout << n << " ";
 }
+
+// MAIN CODE
+
+int main(){
+    int n;
+    cin >> n;
+  
+    print(n);
+}
+
+

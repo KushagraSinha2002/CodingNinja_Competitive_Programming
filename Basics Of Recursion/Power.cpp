@@ -1,6 +1,6 @@
 /*
 Power
-Send Feedback
+
 Write a program to find x to the power n (i.e. x^n). Take x and n from the user. You need to return the answer.
 Do this recursively.
 Input format :
@@ -21,6 +21,9 @@ Sample Output 2 :
 
 ********************************************************** SOLUTION ****************************************************************/
 
+#include<iostream>
+
+using namespace std;
 
 int power(int x, int n) {
     if(n == 0){
@@ -29,3 +32,14 @@ int power(int x, int n) {
     int smallOutput = power(x, n-1);
     return (x * smallOutput);
 }
+
+// MAIN CODE
+
+int main(){
+    int x, n;
+    cin >> x >> n;
+  
+    cout << power(x, n) << endl;
+}
+
+
