@@ -58,8 +58,7 @@ main ()
   cout << x << endl;
   cout << y << endl;
   
-  cout << max(13,15) << endl;
-  cout << min(13,15) << endl;
+  cout << max(13,15) << endl << min(13,15) << endl;
 
   return 0;
 
