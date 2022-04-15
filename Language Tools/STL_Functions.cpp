@@ -1,6 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<cmath>
+#include<utility>
 
 using namespace std;
 
@@ -47,7 +48,18 @@ main ()
   
   cout << "__gcd(10,6) "<< __gcd(10,6) << endl;
   
-  cout << "pow(2,5) "<<pow(2,5) << endl;
+  cout << "pow(2,5) "<<pow(2.25,5) << endl;
+  
+  int x = 10;
+  int y = 12;
+  
+  swap(x,y);
+  
+  cout << x << endl;
+  cout << y << endl;
+  
+  cout << max(13,15) << endl;
+  cout << min(13,15) << endl;
 
   return 0;
 
