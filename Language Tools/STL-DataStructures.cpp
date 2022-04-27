@@ -1,8 +1,10 @@
-#include <iostream>
+#include<iostream>
 #include<vector>
 #include<string>
 #include<utility> // Pair
 #include<set>
+#include<map>
+#include<unordered_map>
 
 
 using namespace std;
@@ -70,10 +72,10 @@ int main()
     cout << endl << "<== Set ==>" << endl << endl;
     
     set<int> set1;
-    int arr[] = {1,2,3,4,5,6,5};
+    int arr_set[] = {1,2,3,4,5,6,5};
     
     for(int i=0; i<7; i++){
-        set1.insert(arr[i]);
+        set1.insert(arr_set[i]);
     }
     
     set<int>:: iterator it_set;
@@ -91,7 +93,60 @@ int main()
     cout << endl << "<== Set ==>" << endl;
     
     cout <<"------------------------";
+    
+    cout << endl << "<== Map ==>" << endl << endl;
+    
+    int arr_map[] = {1,2,3,4,5,6,5};
+
+    map<int,int> m;
+
+    for(int i=0; i<7; i++){
+        m[arr_map[i]] = m[arr_map[i]]+1;
+    }
+
+    map<int,int>:: iterator it_map;
+
+    for(it_map=m.begin(); it_map!=m.end(); it_map++){
+        cout << it_map->first << " : " << it_map->second << endl;
+    }
+    
+    cout << endl;
+    m.erase(1);//erases key
+    
+    for(it_map=m.begin(); it_map!=m.end(); it_map++){
+        cout << it_map->first << " : " << it_map->second << endl;
+    }
+    
+    cout << endl << "<== Map ==>" << endl;
+    
+    cout <<"------------------------";
+    
+    cout << endl << "<== Unordered Map ==>" << endl << endl;
+    
+    int arr_map_unordered[] = {1,2,3,4,5,6,5};
+
+    unordered_map<int,int> m_unordered;
+
+    for(int i=0; i<7; i++){
+        m_unordered[arr_map_unordered[i]] = m_unordered[arr_map_unordered[i]]+1;
+    }
+
+    unordered_map<int,int>:: iterator it_uordered_map;
+
+    for(it_uordered_map=m_unordered.begin(); it_uordered_map!=m_unordered.end(); it_uordered_map++){
+        cout << it_uordered_map->first << " : " << it_uordered_map->second << endl;
+    }
+    
+    cout << endl;
+    m.erase(1);//erases key
+    
+    for(it_map=m.begin(); it_map!=m.end(); it_map++){
+        cout << it_map->first << " : " << it_map->second << endl;
+    }
+    
+    cout << endl << "<== Unordered Map ==>" << endl;
+    
+    cout <<"------------------------";
 
     return 0;
 }
-// Test
