@@ -1,58 +1,45 @@
 #include<bits/stdc++.h>
-#include<vector>
-#include<map>
-#define lli long long int
-
 using namespace std;
 
-
-bool ispossibleCows(int *arr, int n, int dmid, int cows){
-    int tempcows = cows;
-    tempcows--;
-    int lastcow = 0;
-    for (int i = 1; i < n; i++){
-        if (arr[i] - arr[lastcow] >= dmid){
-            lastcow = i;
-            tempcows--;
+bool check(int cows, long long position[], int n,long long distance){
+    int count=1;
+    int lastPosition = position[0];
+    for(int i=0;i<n;i++){
+        if(position[i]-lastPosition>=distance){
+			count++;
+            lastPosition = position[i];
+        }
+        if(count == cows){
+            return true;
         }
     }
-    if (tempcows <= 0){
-    	return true;
-    }
-    else{
-    	return false;
-    }
-}
-void aggresiveCows(int *arr, int n, int dmin, int dmax, int cows){
-    int dmid = (dmin + dmax) / 2;
-    if (dmin > dmax){
-        cout << dmax << endl;
-        return;
-    }
-    if (ispossibleCows(arr, n, dmid, cows)){
-    	aggresiveCows(arr, n, dmid + 1, dmax, cows);
-    }
-    else{
-    	aggresiveCows(arr, n, dmin, dmid - 1, cows);
-    }
+    return false;
 }
 
 int main(){
     int t;
-    
-    cin>>t;
+    cin >> t;
     while(t--){
-        int n,c;
-        cin>>n;
-        cin>>c;
-        int *arr=new int[n];
-        for(int i=0;i<n;i++){
-            cin>>arr[i];
-		}
-        sort(arr,arr+n);
-        int st=0,en;
-        en = arr[n-1];
-        aggresiveCows(arr,n,st,en,c);
+        int n,cows;
+        cin >> n>> cows;
+        long long position[n];
+        for(int i=0; i<n; i++){
+            cin >>position[i];
+        }
+        sort(position,position+n);
+        long long start = 0;
+        long long end = position[n-1] - position[0];
+        long long ans = -1;
+        while(start<=end){
+            long long mid = start + (end-start)/2;
+            if(check(cows,position,n,mid)){
+                ans = mid;
+                start = mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        cout<< ans<<endl;
     }
     return 0;
 }
