@@ -1,31 +1,32 @@
 #include<bits/stdc++.h>
+
 using namespace std;
 
-long NumBTS(int h){
-    if(h==1 || h==0){
-        return 1;
-    }
-    int m = 1000000000+7;
-    long x = NumBTS(h-1);
-    long y = NumBTS(h-2);
-    
-    long res1 = x*x;
-	long res2 = x*y*2;
 
-	int ans1 = (res1%m);
-	int ans2 = (res2%m);
+int balancedBTs(int h){
+
+	if(h==0 || h==1){
+		return 1;
+	}
+
+	int m = pow(10,9) + 7;
+	int x = balancedBTs(h-1);
+	int y = balancedBTs(h-2);
+
+	long res1 = (long)x*x;
+	long res2 = (long)x*y*2;
+
+	int ans1 = (int)(res1%m);
+	int ans2 = (int)(res2%m);
 
 	int ans = (ans1+ans2)%m;
-    
-    return ans;
+
+	return ans;
 }
 
 int main(){
-    int t,h;
-    cin>>t;
-    while(t--){
-        cin>>h;
-        cout<<NumBTS(h)<<endl;
-    }
-    return 0;
+
+	int h=8;
+	cout << balancedBTs(h) << endl;
+	return 0;
 }
