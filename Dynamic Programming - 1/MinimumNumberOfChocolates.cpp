@@ -46,7 +46,6 @@ using namespace std;
 
 int getMinChoco(int *input,int n){
     int *dp = new int[n]();
-    int *dp2 = new int[n]();
     dp[0]=1;
     
     for(int i=1;i<n;i++){
@@ -56,17 +55,14 @@ int getMinChoco(int *input,int n){
             dp[i] = 1;
         }
     }
-    dp2[n-1] = dp[n-1];
     for(int i=n-2;i>=0;i--){
-        if(input[i]>input[i+1] && dp[i] <= dp2[i+1]){
-            dp2[i] = dp2[i+1]+1;
-        }else{
-            dp2[i] = 1;
+        if(input[i]>input[i+1] && dp[i] <= dp[i+1]){
+            dp[i] = dp[i+1]+1;
         }
     }
     int count=0;
     for(int i=0;i<n;i++){
-        count += max(dp[i],dp2[i]);
+        count += dp[i];
     }
     return count;
 }
