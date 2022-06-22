@@ -2,7 +2,7 @@
 using namespace std;
 
 bool SubsetSum(int arr[],int n,int sum){
-    bool dp[n+2][sum+1];
+    bool dp[n+1][sum+1];
     //Initialise i==0 with flase && j==0 with true
     for(int i=0;i<n+1;i++){
         for(int j=0;j<sum+1;j++){
