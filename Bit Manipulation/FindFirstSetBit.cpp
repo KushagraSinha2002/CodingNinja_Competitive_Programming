@@ -31,6 +31,8 @@ Sample Output 2 :
 
 */
 
+/* ----------------------------APPROACH 1----------------------------------------
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -58,3 +60,30 @@ int main(){
     }
     return 0;
 }
+
+--------------------------------------------------------------------------------*/
+
+//-----------------------------APPROACH 2----------------------------------------
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int FindFirstSetBit(int n){
+    //ffs() function returns the index of first least significant set bit
+    //The indexing of ffs() starts in ffs() function from 1. 
+    int i = ffs(n)-1;
+    return 1<<i;
+}
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        cout<<FindFirstSetBit(n)<<endl;
+    }
+    return 0;
+}
+
+//---------------------------------------------------------------------------------
