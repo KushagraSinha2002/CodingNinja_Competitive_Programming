@@ -28,8 +28,34 @@ Sample Output:
 
 #include<bits/stdc++.h>
 using namespace std;
+
+void oddFrequency(int input[],int n){
+    unordered_map<int, int> mp;
+
+    // Traverse through array elements and
+    // count frequencies
+    for (int i = 0; i < n; i++){
+        mp[input[i]]++;
+    }
+     // Traverse through map and check odd frequencies
+    for (auto x : mp){
+        if(x.second % 2 != 0){
+            cout<<x.first<<endl;
+        }
+    }
+}
+
 int main(){
-    
-    // write your code here
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int input[n];
+        for(int i=0;i<n;i++){
+            cin>>input[i];
+        }
+		oddFrequency(input,n);
+    }
     return 0;
 }
