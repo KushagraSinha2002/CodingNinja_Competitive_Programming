@@ -70,7 +70,7 @@ int main(){
 #include<bits/stdc++.h>
 using namespace std;
 
-int SetBit(int n,int i){
+int UnSetBit(int n,int i){
     return (n & (~(1 << i)));
 }
 
@@ -80,7 +80,7 @@ int main(){
     while(t--){
         int n,i;
         cin>>n>>i;
-        cout<<SetBit(n,i)<<endl;
+        cout<<UnSetBit(n,i)<<endl;
     }
     return 0;
 }
