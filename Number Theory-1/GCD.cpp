@@ -1,4 +1,6 @@
 // C++ program to find GCD of two numbers
+// Using Eucid's Algo : gcd(a,b) = gcd(b,a%b) given a>b
+
 #include <iostream>
 using namespace std;
 // Recursive function to return gcd of a and b in single line
@@ -18,4 +20,6 @@ int main()
     }
 	return 0;
 }
-// This code is contributed by Suruchi Kumari
+// Time Complexity: O(log(min(a,b))
+
+// Auxiliary Space: O(log(min(a,b))
