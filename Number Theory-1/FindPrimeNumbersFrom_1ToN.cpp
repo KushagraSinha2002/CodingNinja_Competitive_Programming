@@ -22,12 +22,12 @@
 
 
 
-											There are 3 Approaches
+								There are 3 Approaches
 */
 //----------------------------------------------------------------------------------------------------
 /*
-											Approach 1
-											Time Complexity: O(n^2)
+								Approach 1
+								Time Complexity: O(n^2)
 #include <iostream>
 using namespace std;
 
@@ -62,8 +62,8 @@ int main(){
 //----------------------------------------------------------------------------------------------------
 
 /*
-											Approach 2
-											Time Complexity: O(n*root(n))
+								Approach 2
+								Time Complexity: O(n*root(n))
 #include <iostream>
 using namespace std;
 
@@ -101,8 +101,8 @@ int main(){
 //----------------------------------------------------------------------------------------------------
 
 /*
-											Approach 3
-											Time Complexity: O(n*root(n))
+								Approach 3
+								Time Complexity: O(n*log(log(n)))
 */
 #include <bits/stdc++.h>
 using namespace std;
