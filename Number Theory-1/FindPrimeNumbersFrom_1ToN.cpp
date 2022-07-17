@@ -1,5 +1,109 @@
-// C++ program to find all primes smaller than or equal to
-// n using Sieve of Eratosthenes
+// C++ program to find all primes smaller than or equal to n
+
+/*
+	Find Prime Numbers From 1 to N
+
+	Given a number N, find number of primes in the range [1,N].
+	
+	Input Format:
+	The only line of input consists of a number N
+	
+	Output Format:
+	Print the number of primes in the range [1,N].
+	
+	Constraints:
+	1 ≤ N ≤ 10^6
+	
+	Sample Input :
+	3 
+	
+	Sample Output -
+	2
+
+
+
+											There are 3 Approaches
+*/
+//----------------------------------------------------------------------------------------------------
+/*
+											Approach 1
+											Time Complexity: O(n^2)
+#include <iostream>
+using namespace std;
+
+int checkPrime(int n){
+    int count=0;
+    for(int i=1;i<=n;i++){
+        if(n%i == 0){
+            if(n%i == 0){
+                count+=2;
+            }
+        }
+    }
+    if(count == 2){
+        return true;
+    }
+    return false;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    int count=0;
+    for(int i=1;i<=n;i++){
+        if(checkPrime(i)){
+            count++;
+        }
+    }
+    cout<<count<<endl;
+    return 0;
+}
+*/
+//----------------------------------------------------------------------------------------------------
+
+/*
+											Approach 2
+											Time Complexity: O(n*root(n))
+#include <iostream>
+using namespace std;
+
+int checkPrime(int n){
+    int count=0;
+    for(int i=1;i*i<=n;i++){
+        if(n%i == 0){
+            if(i*i == n){
+                count+=1;
+            }else{
+                count+=2;
+            }
+        }
+    }
+    if(count == 2){
+        return true;
+    }
+    return false;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    int count=0;
+    for(int i=1;i<=n;i++){
+        if(checkPrime(i)){
+            count++;
+        }
+    }
+    cout<<count<<endl;
+    return 0;
+}
+
+*/
+//----------------------------------------------------------------------------------------------------
+
+/*
+											Approach 3
+											Time Complexity: O(n*root(n))
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,5 +144,4 @@ int main()
 	cout<<SieveOfEratosthenes(n)<<endl;
 	return 0;
 }
-
-
+//----------------------------------------------------------------------------------------------------
